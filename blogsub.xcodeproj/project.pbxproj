@@ -18,6 +18,10 @@
 		EA49AE1E16F5ADAF00B11E65 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA49AE1D16F5ADAF00B11E65 /* Default-568h@2x.png */; };
 		EA49AE2116F5ADAF00B11E65 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA49AE1F16F5ADAF00B11E65 /* MainStoryboard.storyboard */; };
 		EA49AE2416F5ADAF00B11E65 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA49AE2316F5ADAF00B11E65 /* ViewController.m */; };
+		EA49AE2C16F5D38D00B11E65 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA49AE2B16F5D38D00B11E65 /* FeedViewController.m */; };
+		EA49AE2F16F5D45000B11E65 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA49AE2E16F5D45000B11E65 /* ProfileViewController.m */; };
+		EA49AE3A16F5D7EE00B11E65 /* tab_icon_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = EA49AE3816F5D7EE00B11E65 /* tab_icon_profile.png */; };
+		EA49AE3B16F5D7EE00B11E65 /* tab_icon_rss.png in Resources */ = {isa = PBXBuildFile; fileRef = EA49AE3916F5D7EE00B11E65 /* tab_icon_rss.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,12 @@
 		EA49AE2016F5ADAF00B11E65 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EA49AE2216F5ADAF00B11E65 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EA49AE2316F5ADAF00B11E65 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EA49AE2A16F5D38D00B11E65 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		EA49AE2B16F5D38D00B11E65 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		EA49AE2D16F5D45000B11E65 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		EA49AE2E16F5D45000B11E65 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		EA49AE3816F5D7EE00B11E65 /* tab_icon_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_icon_profile.png; sourceTree = "<group>"; };
+		EA49AE3916F5D7EE00B11E65 /* tab_icon_rss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_icon_rss.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +95,10 @@
 			children = (
 				EA49AE1616F5ADAF00B11E65 /* AppDelegate.h */,
 				EA49AE1716F5ADAF00B11E65 /* AppDelegate.m */,
+				EA49AE2A16F5D38D00B11E65 /* FeedViewController.h */,
+				EA49AE2B16F5D38D00B11E65 /* FeedViewController.m */,
+				EA49AE2D16F5D45000B11E65 /* ProfileViewController.h */,
+				EA49AE2E16F5D45000B11E65 /* ProfileViewController.m */,
 				EA49AE1F16F5ADAF00B11E65 /* MainStoryboard.storyboard */,
 				EA49AE2216F5ADAF00B11E65 /* ViewController.h */,
 				EA49AE2316F5ADAF00B11E65 /* ViewController.m */,
@@ -96,6 +110,8 @@
 		EA49AE0E16F5ADAF00B11E65 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA49AE3816F5D7EE00B11E65 /* tab_icon_profile.png */,
+				EA49AE3916F5D7EE00B11E65 /* tab_icon_rss.png */,
 				EA49AE0F16F5ADAF00B11E65 /* blogsub-Info.plist */,
 				EA49AE1016F5ADAF00B11E65 /* InfoPlist.strings */,
 				EA49AE1316F5ADAF00B11E65 /* main.m */,
@@ -163,6 +179,8 @@
 				EA49AE1C16F5ADAF00B11E65 /* Default@2x.png in Resources */,
 				EA49AE1E16F5ADAF00B11E65 /* Default-568h@2x.png in Resources */,
 				EA49AE2116F5ADAF00B11E65 /* MainStoryboard.storyboard in Resources */,
+				EA49AE3A16F5D7EE00B11E65 /* tab_icon_profile.png in Resources */,
+				EA49AE3B16F5D7EE00B11E65 /* tab_icon_rss.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +194,8 @@
 				EA49AE1416F5ADAF00B11E65 /* main.m in Sources */,
 				EA49AE1816F5ADAF00B11E65 /* AppDelegate.m in Sources */,
 				EA49AE2416F5ADAF00B11E65 /* ViewController.m in Sources */,
+				EA49AE2C16F5D38D00B11E65 /* FeedViewController.m in Sources */,
+				EA49AE2F16F5D45000B11E65 /* ProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
