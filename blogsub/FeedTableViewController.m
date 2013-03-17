@@ -7,6 +7,7 @@
 //
 
 #import "FeedTableViewController.h"
+#import "PostViewController.h"
 
 @interface FeedTableViewController ()
 
@@ -20,6 +21,7 @@
     if (self) {
         self.title = @"Feed";
         self.tabBarItem.image = [UIImage imageNamed:@"tab_icon_rss"];
+        self.posts = @[@"Title1", @"Title2", @"Title3", @"Title4", @"Title5", @"Title6"];
     }
     return self;
 }
@@ -54,7 +56,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 5;
+    return self.posts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -66,6 +68,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:CellIdentifier];
     }
+    
+    cell.textLabel.text = self.posts[indexPath.row];
     
     return cell;
 }
@@ -113,13 +117,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    
+    PostViewController *postVC = [[PostViewController alloc] init];
+    postVC.view.frame = self.view.frame;
+    
+    //postVC.titleLabel = self.posts[indexPath.row];
+    
+    [self.navigationController pushViewController:postVC animated:YES];
 }
 
 @end

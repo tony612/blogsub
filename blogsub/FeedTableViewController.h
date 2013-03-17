@@ -10,4 +10,5 @@
 
 @interface FeedTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSArray *posts;
 @end
