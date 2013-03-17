@@ -17,12 +17,13 @@
     FeedTableViewController *feedTableViewController = [[FeedTableViewController alloc]
                                                         initWithStyle:UITableViewStylePlain];
     
-    ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc]
+                                initWithRootViewController:feedTableViewController];
     
     ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    [tabBarController setViewControllers:@[feedTableViewController, profileViewController]];
+    [tabBarController setViewControllers:@[navController, profileViewController]];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = tabBarController;
