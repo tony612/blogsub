@@ -7,12 +7,28 @@
 //
 
 #import "AppDelegate.h"
+#import "FeedTableViewController.h"
+#import "ProfileViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    FeedTableViewController *feedTableViewController = [[FeedTableViewController alloc]
+                                                        initWithStyle:UITableViewStylePlain];
+    
+    UINavigationController *navController = [[UINavigationController alloc]
+                                initWithRootViewController:feedTableViewController];
+    
+    ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    [tabBarController setViewControllers:@[navController, profileViewController]];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = tabBarController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							
