@@ -7,22 +7,22 @@
 //
 
 #import "AppDelegate.h"
-#import "FeedViewController.h"
+#import "FeedTableViewController.h"
 #import "ProfileViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    FeedViewController *feedViewController = [[FeedViewController alloc] init];
+    FeedTableViewController *feedTableViewController = [[FeedTableViewController alloc]
+                                                        initWithStyle:UITableViewStylePlain];
     
     ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
     
-    feedViewController.view.backgroundColor = [UIColor blueColor];
-    profileViewController.view.backgroundColor = [UIColor whiteColor];
+    ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    [tabBarController setViewControllers:@[feedViewController, profileViewController]];
+    [tabBarController setViewControllers:@[feedTableViewController, profileViewController]];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = tabBarController;

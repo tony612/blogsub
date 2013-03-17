@@ -1,5 +1,5 @@
 //
-//  FeedViewController.h
+//  FeedTableViewController.h
 //  blogsub
 //
 //  Created by Tony on 3/17/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FeedViewController : UIViewController
+@interface FeedTableViewController : UITableViewController
 
 @end
