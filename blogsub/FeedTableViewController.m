@@ -132,6 +132,7 @@
 {
     
     PostViewController *postVC = [[PostViewController alloc] init];
+    [postVC requestPostById:self.posts[indexPath.row][@"id"]];
     postVC.view.frame = self.view.frame;
     
     //postVC.titleLabel = self.posts[indexPath.row];
