@@ -7,6 +7,7 @@
 //
 
 #import "PostViewController.h"
+#import <AFJSONRequestOperation.h>
 
 @interface PostViewController ()
 
@@ -43,6 +44,26 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)requestPostById:(NSNumber *)postID
+{
+    NSLog(@"%@", postID);
+    NSLog(@"%@", [postID class]);
+    NSURL *url = [[NSURL alloc] initWithString:
+                  [NSString stringWithFormat:@"http://localhost:3000/posts/%@.json", postID]];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation
+            JSONRequestOperationWithRequest:request
+            success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                NSLog(@"%@", JSON);
+                self.titleLabel.text = JSON[@"title"];
+                self.content.text = JSON[@"content"];
+            } failure:^(NSURLRequest *request,NSHTTPURLResponse *response,
+                                    NSError *error, id JSON){
+                NSLog(@"NSError: %@", error.localizedDescription);
+          }];
+    [operation start];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "FeedTableViewController.h"
 #import "PostViewController.h"
+#import <AFJSONRequestOperation.h>
 
 @interface FeedTableViewController ()
 
@@ -21,7 +22,7 @@
     if (self) {
         self.title = @"Feed";
         self.tabBarItem.image = [UIImage imageNamed:@"tab_icon_rss"];
-        self.posts = @[@"Title1", @"Title2", @"Title3", @"Title4", @"Title5", @"Title6"];
+        //self.posts = @[@"Title1", @"Title2", @"Title3", @"Title4", @"Title5", @"Title6"];
     }
     return self;
 }
@@ -35,6 +36,18 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSURL *url = [[NSURL alloc] initWithString:@"http://localhost:3000/posts.json"];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation
+            JSONRequestOperationWithRequest:request
+            success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                self.posts = JSON;
+                [self.tableView reloadData];
+            } failure:^(NSURLRequest *request,NSHTTPURLResponse *response,
+                                    NSError *error, id JSON){
+                NSLog(@"NSError: %@", error.localizedDescription);
+          }];
+    [operation start];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,7 +82,7 @@
                                       reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = self.posts[indexPath.row];
+    cell.textLabel.text = self.posts[indexPath.row][@"title"];
     
     return cell;
 }
@@ -119,6 +132,7 @@
 {
     
     PostViewController *postVC = [[PostViewController alloc] init];
+    [postVC requestPostById:self.posts[indexPath.row][@"id"]];
     postVC.view.frame = self.view.frame;
     
     //postVC.titleLabel = self.posts[indexPath.row];
