@@ -10,7 +10,10 @@
 
 @interface PostViewController : UIViewController
 
+@property (strong, nonatomic) NSDictionary *post;
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UITextView *content;
+
+- (void)requestPostById:(NSNumber *)postID;
 
 @end
